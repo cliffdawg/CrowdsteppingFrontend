@@ -1,0 +1,17 @@
+.goal {
+  background-color: blue;
+  height: 35%;
+}
+
+.goal-title {
+  text-align: center;
+}
+
+.goal-identifiers {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  font-size: 10%;
+}

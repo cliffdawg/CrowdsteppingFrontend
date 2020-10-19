@@ -1,18 +1,45 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
-@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap');
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0,0,0, 0.5);
+}
 
-.App {
+.popup_inner {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 25%;
+  bottom: 25%;
+  margin: auto;
+  background: #60BDDB;
+}
+
+.Create-new-goal {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: auto;
+}
+
+.Goal-var {
+  width: auto;
+}
+
+.App2 {
   text-align: center;
 }
 
-/*.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}*/
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App2-header {
+  background-color: #60BDDB;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,13 +48,32 @@
   color: white;
 }
 
-.App-title {
-  font-size: 32px;
-  font-family: 'Josefin Sans';
+.Top-bar {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.Redirect-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: auto;
+}
+
+.Goals-grid {
+  background-color: #60BDDB;
+  height: 300px;
+  display: grid;
+  justify-content: space-around;
+  align-items: center;
+  grid-template-columns: 25% 25% 25%;
+  grid-gap: 5%;
+  color: white;
 }
 
 @keyframes App-logo-spin {
@@ -42,22 +88,22 @@
 /* BUTTON STYLING */
 
 .Button-style {
-color: #494949 !important;
-font-family: 'Cabin';
-font-size: 16px;
-text-transform: uppercase;
-text-decoration: none;
-background: #ffffff;
-border: 4px solid #494949 !important;
-display: inline-block;
-transition: all 0.4s ease 0s;
+  color: #494949 !important;
+  font-family: 'Cabin';
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ffffff;
+  border: 4px solid #494949 !important;
+  display: inline-block;
+  transition: all 0.4s ease 0s;
 }
 
 .Button-style:hover {
-color: #ffffff !important;
-background: #f6b93b;
-border-color: #f6b93b !important;
-transition: all 0.4s ease 0s;
+  color: #ffffff !important;
+  background: #f6b93b;
+  border-color: #f6b93b !important;
+  transition: all 0.4s ease 0s;
 }
 
 /* INPUT STYLING */

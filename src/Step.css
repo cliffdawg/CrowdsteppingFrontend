@@ -1,42 +1,44 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
-@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap');
-
-.App {
-  text-align: center;
+.step {
+  height: 120px;
+  width: 400px;
+  border-radius: 25px;
+  background: rgb(5,93,177);
+  background: radial-gradient(circle, rgba(5,93,177,1) 30%, rgba(0,212,255,1) 90%, rgba(255,255,255,1) 100%);
+  margin-bottom: 40px;
+  background-color: blue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-/*.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}*/
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.step-info {
+  position: relative;
+  left: 10%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-evenly;
+}
+
+.step-title {
+  text-align: center;
+}
+
+.step-identifiers {
+  position: relative;
+  width: 150%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   color: white;
+  font-size: 10%;
 }
 
-.App-title {
-  font-size: 32px;
-  font-family: 'Josefin Sans';
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.step-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-evenly;
 }
 
 /* BUTTON STYLING */
@@ -169,3 +171,4 @@ transition: all 0.4s ease 0s;
   from { background:#5264AE; }
   to  { width:0; background:transparent; }
 }
+
