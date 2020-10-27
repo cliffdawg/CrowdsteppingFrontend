@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 .goal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   background-color: blue;
-  height: 35%;
+  height: 100px;
 }
 
 .goal-title {
+  font-family: 'Open Sans';
   text-align: center;
 }
 
@@ -13,5 +19,6 @@
   align-items: center;
   justify-content: space-around;
   color: white;
-  font-size: 10%;
+  font-size: 12px;
 }
+

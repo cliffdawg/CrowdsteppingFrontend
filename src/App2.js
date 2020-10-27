@@ -27,6 +27,7 @@ class Popup extends Component {
               <input
                 className="Custom-input"
                 type="text" required
+                maxlength='64'
                 onChange={this.props.updateGoal}
               />
               <span className="Custom-highlight"></span>
@@ -35,7 +36,7 @@ class Popup extends Component {
             </div>
               <Ripples>
                 <button className="Button-style" onClick={this.props.createGoal} style={{ height : '30px', width : '100px' }}>
-                  Create goal
+                  Create
                 </button>
               </Ripples>
             </div>
@@ -228,10 +229,10 @@ class App2 extends Component {
           <div className="Top-bar">
             <Ripples>
               <button className="Button-style" onClick={this.presentPopUp} style={{ height : '30px', width : '100px' }}>
-                Create Goal
+                Create
               </button>
             </Ripples>
-            <p>
+            <p className="App2-title">
               CrowdStepping
             </p>
             <div className="Redirect-buttons">
@@ -242,16 +243,13 @@ class App2 extends Component {
               </Ripples>
             </div>
           </div>
-          <label>
-            {this.state.number}
-          </label>
         </header>
-        <div className="Goals-grid">
-          {cards}
-        </div>
         <footer>
           <UserPanel currentUser={this.props.username} />
         </footer>
+        <div className="Goals-grid">
+          {cards}
+        </div>
         {this.state.popUp ? 
           <Popup
             text='Create a Goal'

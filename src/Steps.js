@@ -27,6 +27,7 @@ class Popup extends Component {
                 <input
                   className="Custom-input"
                   type="text" required
+                  maxlength='100'
                   onChange={this.props.updateStep}
                 />
                 <span className="Custom-highlight"></span>
@@ -402,14 +403,12 @@ class Steps extends Component {
               Sign Out
             </button>
           </Ripples>
+          <p style={{ marginTop: '20px', fontSize: '20px', fontFamily: 'Cabin', color: '#FFFFFF' }}>{'User: ' + this.props.currentUser}</p>
         </header>
         <img src={require('./assets/insertIcon.png')} alt='Ins' onClick={() => this.prepareInsert(-1)} style={{ position : 'absolute', marginLeft : '30vw', marginTop : '-20px' }} width='128' height='128' />
         <div className="Steps-list">
           {cards}
         </div>
-        <footer>
-          <UserPanel currentUser={this.props.username} />
-        </footer>
         {this.state.popUp ? 
           <Popup
             text='Create a Step'

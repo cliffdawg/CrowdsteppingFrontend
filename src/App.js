@@ -188,6 +188,7 @@ class App extends Component {
             <input
               className="Custom-input"
               type="text" required
+              maxlength='50'
               onChange={this.updateUsername}
             />
             <span className="Custom-highlight"></span>
@@ -198,6 +199,7 @@ class App extends Component {
             <input 
               className="Custom-input"
               type="password" required
+              maxlength='50'
               onChange={this.updatePassword}
             />
             <span className="Custom-highlight"></span>
@@ -213,6 +215,7 @@ class App extends Component {
             <input
               className="Custom-input"
               type="text" required
+              maxlength='50'
               onChange={this.updateUsername2}
             />
             <span className="Custom-highlight"></span>
@@ -223,6 +226,7 @@ class App extends Component {
             <input
               className="Custom-input"
               type="text" required
+              maxlength='50'
               onChange={this.updateEmail}
             />
             <span className="Custom-highlight"></span>
@@ -233,6 +237,7 @@ class App extends Component {
             <input
               className="Custom-input"
               type="password" required
+              maxlength='50'
               onChange={this.updatePassword2}
             />
             <span className="Custom-highlight"></span>
