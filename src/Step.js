@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
 import './Step.css'
 import Ripples from 'react-ripples'
+import React, { useState } from 'react';
 
 // Setting style inline has format of thisProperty, setting in CSS file has format of this-property
 // This is a function component, a component that doesn't require state or lifecycle
@@ -13,7 +13,8 @@ const Step = ({index, step, userID, timeStamp, status, userEndorsed, endorse, op
 
 	return (
 
-	<div className="step" style={{ marginLeft : status ? 0 : 140, backgroundColor : status ? 'blue' : 'green' }} >
+	<div className="step" style={{ marginLeft : status ? 0 : 140, background : status ? 'rgb(5,93,177)' : 'rgb(56,46,107)', 
+		background : status ? 'radial-gradient(circle, rgba(5,93,177,1) 30%, rgba(0,212,255,1) 90%, rgba(255,255,255,1) 100%)' : 'radial-gradient(circle, rgba(56,46,107,1) 30%, rgba(104,21,255,1) 90%, rgba(255,255,255,1) 100%)' }} >
 		<div className="step-info">
 			<div className="step-title">
 				<label>
@@ -44,7 +45,7 @@ const Step = ({index, step, userID, timeStamp, status, userEndorsed, endorse, op
           	</Ripples>
 		</div>
 
-		<img src={require('./assets/insertIcon.png')} alt='Ins' onClick={() => prepare(index)} style={{ position : 'absolute', marginLeft : status ? '35vw' : '29.5vw', marginTop : '80px' }} width='128' height='128' />
+		<img src={require('./assets/insertIcon.png')} alt='Ins' onClick={() => prepare(index)} style={{ position : 'absolute', marginLeft : status ? '34vw' : '28.5vw', marginTop : '80px' }} width='100' height='100' />
 
 	</div>
 );

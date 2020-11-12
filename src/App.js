@@ -27,7 +27,9 @@ class App extends Component {
             password: '',
             username2: '',
             email: '',
-            password2: ''
+            password2: '',
+            loginDisabled: false,
+            signupDisabled: false
         };
 
         // Arrow functions declared in constructor are the only ones that can be accessed by rendered components
@@ -50,6 +52,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     if (this.props.origin === 'tokenExpired') {
       this.notify('Please sign in!');
     }
@@ -169,6 +172,9 @@ class App extends Component {
     }
   }
 
+
+  //** addd loading animation for buttons like login later
+
   render() {
 
     if (this.state.toApp2 === true) {
@@ -207,7 +213,8 @@ class App extends Component {
             <label className="Custom-label">Password</label>
           </div>
           <Ripples>
-            <button className="Button-style" onClick={this.login} style={{ height : '30px', width : '100px' }}>
+            <button className="Button-style" onClick={() => { this.logIn(); this.setState({ loginDisabled: true }); setTimeout(() => this.setState({ loginDisabled: false }), 4000); }} 
+                disabled={this.state.loginDisabled} style={{ height : '30px', width : '100px' }}>
               Login
             </button>
           </Ripples>
@@ -245,7 +252,8 @@ class App extends Component {
             <label className="Custom-label">Password</label>
           </div>
           <Ripples>
-            <button className="Button-style" onClick={this.signup} style={{ height : '30px', width : '100px' }}>
+            <button className="Button-style" onClick={() => { this.signUp(); this.setState({ signupDisabled: true }); setTimeout(() => this.setState({ signupDisabled: false }), 4000); }} 
+                disabled={this.state.signupDisabled} style={{ height : '30px', width : '100px' }}>
               Sign Up
             </button>
           </Ripples>

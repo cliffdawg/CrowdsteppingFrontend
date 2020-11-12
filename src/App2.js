@@ -35,7 +35,7 @@ class Popup extends Component {
               <label className="Custom-label">Goal</label>
             </div>
               <Ripples>
-                <button className="Button-style" onClick={this.props.createGoal} style={{ height : '30px', width : '100px' }}>
+                <button className="Button-style" onClick={this.props.createGoal} disabled={this.props.createDisabled} style={{ height : '30px', width : '100px' }}>
                   Create
                 </button>
               </Ripples>
@@ -63,7 +63,8 @@ class App2 extends Component {
             signOut: false,
             goal: '',
             goals: [],
-            popUp: false
+            popUp: false,
+            createDisabled: false
         };
         // Arrow functions declared in constructor are the only ones that can be accessed by rendered components
         // and provide access to the current state
@@ -91,6 +92,7 @@ class App2 extends Component {
   }
 
   componentDidMount() {
+        window.scrollTo(0, 0);
         const token = localStorage.getItem('token');
         console.log(`App2 user: ${this.props.username}, id: ${this.props.userID}, token: ${token}`);
 
@@ -167,6 +169,10 @@ class App2 extends Component {
   }
 
   async postGoal() {
+
+    this.setState({ createDisabled: true }); 
+    setTimeout(() => this.setState({ createDisabled: false }), 4000);
+
     const token = localStorage.getItem('token');
     const { goal } = this.state;
     console.log(`${goal}`);
@@ -187,6 +193,8 @@ class App2 extends Component {
       this.presentPopUp();
     }
   }
+
+  //** add sorting options for goals timestamp later
 
   render() {
 
@@ -256,6 +264,7 @@ class App2 extends Component {
             closePopup={this.presentPopUp.bind(this)}
             updateGoal={this.updateGoal.bind(this)}
             createGoal={this.createGoal}
+            createDisabled={this.state.createDisabled}
           />
           : null
         }

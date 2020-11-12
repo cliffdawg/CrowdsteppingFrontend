@@ -35,7 +35,7 @@ class Popup extends Component {
                 <label className="Custom-label">Step</label>
               </div>
               <Ripples>
-                <button className="Button-style" onClick={this.props.createStep} style={{ height : '30px', width : '100px' }}>
+                <button className="Button-style" onClick={this.props.createStep} disabled={this.props.createDisabled} style={{ height : '30px', width : '100px' }}>
                   Create step
                 </button>
               </Ripples>
@@ -65,7 +65,8 @@ class Steps extends Component {
             steps: [],
             votes: [],
             index: 0,
-            popUp: false
+            popUp: false,
+            createDisabled: false
         };
         // Arrow functions declared in constructor are the only ones that can be accessed by rendered components
         // and provide access to the current state
@@ -86,6 +87,7 @@ class Steps extends Component {
     }
 
   componentDidMount() {
+        window.scrollTo(0, 0);
         this.setState({ goal: this.props.location.state.goal });
         this.setSteps(this.props.location.state.goal);
         this.setVotes(this.props.location.state.goal);
@@ -139,6 +141,10 @@ class Steps extends Component {
   }
 
   async createStep() {
+
+    this.setState({ createDisabled: true }); 
+    setTimeout(() => this.setState({ createDisabled: false }), 4000);
+
     console.log(`createStep: ${this.state.step}`);
     let stepsIndex;
     let stepsCount = this.state.steps.length;
@@ -403,9 +409,10 @@ class Steps extends Component {
               Sign Out
             </button>
           </Ripples>
-          <p style={{ marginTop: '20px', fontSize: '20px', fontFamily: 'Cabin', color: '#FFFFFF' }}>{'User: ' + this.props.currentUser}</p>
+          <p style={{ marginTop: '30px', fontSize: '20px', fontFamily: 'Cabin', color: '#FFFFFF' }}>{'Goal:  ' + this.props.location.state.goal}</p>
+          <p style={{ marginTop: '0px', fontSize: '20px', fontFamily: 'Cabin', color: '#FFFFFF' }}>{'User:  ' + this.props.username}</p>
         </header>
-        <img src={require('./assets/insertIcon.png')} alt='Ins' onClick={() => this.prepareInsert(-1)} style={{ position : 'absolute', marginLeft : '30vw', marginTop : '-20px' }} width='128' height='128' />
+        <img src={require('./assets/insertIcon.png')} alt='Ins' onClick={() => this.prepareInsert(-1)} style={{ position : 'absolute', marginLeft : '30vw', marginTop : '-20px' }} width='100' height='100' />
         <div className="Steps-list">
           {cards}
         </div>
@@ -415,6 +422,7 @@ class Steps extends Component {
             closePopup={this.presentPopUp.bind(this)}
             updateStep={this.updateStep.bind(this)}
             createStep={this.createStep.bind(this)}
+            createDisabled={this.state.createDisabled}
           />
           : null
         }

@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 .goal {
+  height: 100px;
+  border-radius: 25px;
+  background: rgb(5,93,177);
+  background: radial-gradient(circle, rgba(5,93,177,1) 30%, rgba(0,212,255,1) 90%, rgba(255,255,255,1) 100%);
+  background-color: blue;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: blue;
-  height: 100px;
 }
 
 .goal-title {
