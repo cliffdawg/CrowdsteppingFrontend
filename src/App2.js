@@ -27,7 +27,7 @@ class Popup extends Component {
               <input
                 className="Custom-input"
                 type="text" required
-                maxlength='64'
+                maxLength='64'
                 onChange={this.props.updateGoal}
               />
               <span className="Custom-highlight"></span>
@@ -199,7 +199,7 @@ class App2 extends Component {
   render() {
 
     if (this.state.toApp === true || this.state.signOut === true) {
-      return <Redirect to="/App" />
+      return <Redirect to="/" />
     }
 
     if (this.state.toSteps === true) {

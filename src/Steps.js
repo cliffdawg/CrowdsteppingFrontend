@@ -27,7 +27,7 @@ class Popup extends Component {
                 <input
                   className="Custom-input"
                   type="text" required
-                  maxlength='100'
+                  maxLength='100'
                   onChange={this.props.updateStep}
                 />
                 <span className="Custom-highlight"></span>
@@ -61,6 +61,7 @@ class Steps extends Component {
             signOut: false,
             goal: '',
             showProposed: true,
+            showInsert: false,
             step: '',
             steps: [],
             votes: [],
@@ -83,6 +84,7 @@ class Steps extends Component {
         // Binding a new function to this instance means it can be used by it.
         this.presentApp = this.presentApp.bind(this);
         this.showProposed = this.showProposed.bind(this);
+        this.showInsert = this.showInsert.bind(this);
         this.signOut = this.signOut.bind(this);
     }
 
@@ -316,10 +318,16 @@ class Steps extends Component {
         });
   }
 
+  async showInsert() {
+        this.setState({
+              showInsert: !this.state.showInsert
+        });
+  }
+
   render() {
 
     if (this.state.toApp === true || this.state.signOut === true) {
-      return <Redirect to="/App" />
+      return <Redirect to="/" />
     }
 
     if (this.state.toApp2 === true) {
@@ -363,6 +371,7 @@ class Steps extends Component {
                 userEndorsed={stepsStatus[step.step]}
                 endorse={this.endorseStep.bind(this)}
                 oppose={this.opposeStep.bind(this)}
+                inserting={this.state.showInsert}
                 prepare={this.prepareInsert.bind(this)}
               />
             ));
@@ -380,6 +389,7 @@ class Steps extends Component {
                 userEndorsed={stepsStatus[step.step]}
                 endorse={this.endorseStep.bind(this)}
                 oppose={this.opposeStep.bind(this)}
+                inserting={this.state.showInsert}
                 prepare={this.prepareInsert.bind(this)}
               />
             ));
@@ -393,6 +403,7 @@ class Steps extends Component {
     return (
       <div className="Steps">
         <ToastContainer />
+        <header className="Steps-header-overall">
         <header className="Steps-header">  
           <Ripples>
             <button className="Button-style" onClick={this.toApp2} style={{ height : '30px', width : '150px' }}>
@@ -400,19 +411,27 @@ class Steps extends Component {
             </button>
           </Ripples>  
           <Ripples>
+            <button className="Button-style" onClick={this.signOut} style={{ height : '30px', width : '150px' }}>
+              Sign Out
+            </button>
+          </Ripples>
+        </header>
+        <header className="Steps-header">
+          <Ripples>
             <button className="Button-style" onClick={this.showProposed} style={{ height : '60px', width : '150px' }}>
               Show Unapproved
             </button>
           </Ripples>
           <Ripples>
-            <button className="Button-style" onClick={this.signOut} style={{ height : '30px', width : '150px' }}>
-              Sign Out
+            <button className="Button-style" onClick={this.showInsert} style={{ height : '60px', width : '150px' }}>
+              Insert New Step
             </button>
           </Ripples>
-          <p style={{ marginTop: '30px', fontSize: '20px', fontFamily: 'Cabin', color: '#FFFFFF' }}>{'Goal:  ' + this.props.location.state.goal}</p>
-          <p style={{ marginTop: '0px', fontSize: '20px', fontFamily: 'Cabin', color: '#FFFFFF' }}>{'User:  ' + this.props.username}</p>
         </header>
-        <img src={require('./assets/insertIcon.png')} alt='Ins' onClick={() => this.prepareInsert(-1)} style={{ position : 'absolute', marginLeft : '30vw', marginTop : '-20px' }} width='100' height='100' />
+        <p style={{ marginTop: '20px', fontSize: '20px', fontFamily: 'Cabin', textAlign: 'center', color: '#FFFFFF', backgroundColor: '#a2f2be' }}>{'Goal:  ' + this.props.location.state.goal}</p>
+        <p style={{ marginTop: '0px', fontSize: '20px', fontFamily: 'Cabin', textAlign: 'center', color: '#FFFFFF', backgroundColor: '#a2f2be' }}>{'User:  ' + this.props.username}</p>
+        </header>
+        {this.state.showInsert ? <img src={require('./assets/insertIcon.png')} alt='Ins' onClick={() => this.prepareInsert(-1)} style={{ position : 'absolute', marginLeft : '30vw', marginTop : '-20px' }} width='100' height='100' /> : null}
         <div className="Steps-list">
           {cards}
         </div>

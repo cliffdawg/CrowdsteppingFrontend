@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 // Setting style inline has format of thisProperty, setting in CSS file has format of this-property
 // This is a function component, a component that doesn't require state or lifecycle
-const Step = ({index, step, userID, timeStamp, status, userEndorsed, endorse, oppose, prepare}) => {
+const Step = ({index, step, userID, timeStamp, status, userEndorsed, endorse, oppose, inserting, prepare}) => {
 
 	// Hooks are functions that let us hook into the React state and lifecycle features
 	// useState is a Hook that lets you add React state to function components
@@ -45,7 +45,7 @@ const Step = ({index, step, userID, timeStamp, status, userEndorsed, endorse, op
           	</Ripples>
 		</div>
 
-		<img src={require('./assets/insertIcon.png')} alt='Ins' onClick={() => prepare(index)} style={{ position : 'absolute', marginLeft : status ? '34vw' : '28.5vw', marginTop : '80px' }} width='100' height='100' />
+		{inserting ? <img src={require('./assets/insertIcon.png')} alt='Ins' onClick={() => prepare(index)} style={{ position : 'absolute', marginLeft : status ? '34vw' : '28.5vw', marginTop : '80px' }} width='100' height='100' /> : null}
 
 	</div>
 );
