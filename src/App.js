@@ -178,7 +178,7 @@ class App extends Component {
   render() {
 
     if (this.state.toApp2 === true) {
-        return <Redirect to="/App2" />
+        return <Redirect to="/Goals" />
     }
 
     return (

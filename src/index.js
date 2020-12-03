@@ -20,8 +20,8 @@ ReactDOM.render(
 		<div>
 			<Switch>
 				<Route exact path="/" component={App} />
-				<Route path="/App2" component={App2} />
-				<Route path="/Steps" component={Steps} />
+				<Route exact path="/Goals" component={App2} />
+				<Route exact path="/Steps" component={Steps} />
 			</Switch>
 		</div>
 		</BrowserRouter>

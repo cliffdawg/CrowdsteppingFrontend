@@ -1,6 +1,6 @@
 // When using a proxy, cannot use root endpoint '/' for route, will return HTML
 //const APIURL = '/api';
-const APIURL = '';
+const APIURL = 'https://lit-caverns-29354.herokuapp.com/https://webdevproject1.herokuapp.com';
 
 const throwError = async (resp) => {
     const unknownErr = { errorMessage: 'Unknown error' };
@@ -35,7 +35,7 @@ const verifyToken = async (token) => {
 }
 
 const signIn = async (credentials) => {
-    console.log(`credentials: ${credentials.username}`);
+    console.log(`credentials: ${credentials.username}, API:`);
     const resp = await fetch(APIURL + '/signin', {
         method: 'POST',
         headers: new Headers({
@@ -43,6 +43,7 @@ const signIn = async (credentials) => {
         }),
         body: JSON.stringify(credentials)
     });
+    console.log(`response: ${resp}`);
     if (!resp.ok) {
         throwError(resp);
     } else {

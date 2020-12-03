@@ -331,7 +331,7 @@ class Steps extends Component {
     }
 
     if (this.state.toApp2 === true) {
-      return <Redirect to="/App2" />
+      return <Redirect to="/Goals" />
     }
 
       const { steps } = this.state;
