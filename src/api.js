@@ -35,7 +35,7 @@ const verifyToken = async (token) => {
 }
 
 const signIn = async (credentials) => {
-    console.log(`credentials: ${credentials.username}, API:`);
+    console.log(`credentials: ${credentials.username}, API: ${APIURL}`);
     const resp = await fetch(APIURL + '/signin', {
         method: 'POST',
         headers: new Headers({
