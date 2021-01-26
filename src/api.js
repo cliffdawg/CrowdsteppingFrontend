@@ -18,7 +18,6 @@ const throwError = async (resp) => {
 };
 
 const verifyToken = async (token) => {
-    //APIURL,
     console.log(`verify token: ${token}`);
     const resp = await fetch(APIURL + '/token', {
         method: 'GET',
@@ -35,7 +34,7 @@ const verifyToken = async (token) => {
 }
 
 const signIn = async (credentials) => {
-    console.log(`credentials: ${credentials.username}, API: ${APIURL}`);
+    console.log(`credentials: ${credentials.username}`);
     const resp = await fetch(APIURL + '/signin', {
         method: 'POST',
         headers: new Headers({
@@ -71,7 +70,6 @@ const signUp = async (post, token) => {
 };
 
 const getGoals = async (token) => {
-    //APIURL,
     console.log(`getGoals: ${token}`)
     const resp = await fetch(APIURL + '/goals', {
         method: 'GET',
@@ -89,7 +87,6 @@ const getGoals = async (token) => {
 
 const createGoal = async (post, token) => {
     console.log(`post: ${post}`);
-    //APIURL,
     const resp = await fetch(APIURL + '/goal', {
         method: 'POST',
         headers: new Headers({
@@ -106,7 +103,6 @@ const createGoal = async (post, token) => {
 };
 
 const getSteps = async (goal, token) => {
-    //APIURL,
     console.log(`getSteps: ${token}`)
     const resp = await fetch(APIURL + '/steps', {
         method: 'POST',
@@ -124,7 +120,6 @@ const getSteps = async (goal, token) => {
 }; 
 
 const getVotes = async (userGoal, token) => {
-    //APIURL,
     console.log(`getVotes: ${token}`)
     const resp = await fetch(APIURL + '/votes', {
         method: 'POST',
@@ -142,7 +137,6 @@ const getVotes = async (userGoal, token) => {
 }; 
 
 const createStep = async (prospectiveStep, token) => {
-    //APIURL,
     console.log(`create step: ${prospectiveStep.goal}, ${prospectiveStep.step}`);
     const resp = await fetch(APIURL + '/step', {
         method: 'POST',
@@ -160,7 +154,6 @@ const createStep = async (prospectiveStep, token) => {
 }; 
 
 const patchStep = async (specificStep, token) => {
-    //APIURL,
     console.log(`patch step: ${specificStep.userID}, ${specificStep.goal}, ${specificStep.step}, ${specificStep.endorsed}`);
     const resp = await fetch(APIURL + '/step', {
         method: 'PATCH',
@@ -178,7 +171,6 @@ const patchStep = async (specificStep, token) => {
 }; 
 
 const negateStep = async (specificStep, token) => {
-    //APIURL,
     console.log(`negateStep: ${specificStep.userID}, ${specificStep.goal}, ${specificStep.step}, ${specificStep.endorsed}`);
     const resp = await fetch(APIURL + '/negateStep', {
         method: 'PATCH',
@@ -196,7 +188,6 @@ const negateStep = async (specificStep, token) => {
 }; 
 
 const switchStep = async (specificStep, token) => {
-    //APIURL,
     console.log(`switchStep: ${specificStep.userID}, ${specificStep.goal}, ${specificStep.step}, ${specificStep.endorsed}`);
     const resp = await fetch(APIURL + '/switchStep', {
         method: 'PATCH',
@@ -214,7 +205,6 @@ const switchStep = async (specificStep, token) => {
 }; 
 
 const getNumber = async () => {
-    //APIURL,
     const resp = await fetch(APIURL + '/');
     if (!resp.ok) {
         console.log('api getNumber fail');

@@ -213,7 +213,7 @@ class App extends Component {
             <label className="Custom-label">Password</label>
           </div>
           <Ripples>
-            <button className="Button-style" onClick={() => { this.logIn(); this.setState({ loginDisabled: true }); setTimeout(() => this.setState({ loginDisabled: false }), 4000); }} 
+            <button className="Button-style" onClick={() => { this.logIn(); this.setState({ loginDisabled: true }); setTimeout(() => this.setState({ loginDisabled: false }), 10000); }} 
                 disabled={this.state.loginDisabled} style={{ height : '30px', width : '100px' }}>
               Login
             </button>
@@ -252,7 +252,7 @@ class App extends Component {
             <label className="Custom-label">Password</label>
           </div>
           <Ripples>
-            <button className="Button-style" onClick={() => { this.signUp(); this.setState({ signupDisabled: true }); setTimeout(() => this.setState({ signupDisabled: false }), 4000); }} 
+            <button className="Button-style" onClick={() => { this.signUp(); this.setState({ signupDisabled: true }); setTimeout(() => this.setState({ signupDisabled: false }), 10000); }} 
                 disabled={this.state.signupDisabled} style={{ height : '30px', width : '100px' }}>
               Sign Up
             </button>

@@ -13,7 +13,7 @@
     "react-toastify": "^4.1.0",
     "redux": "^4.0.1"
   },
-  "proxy": "https://webdevproject1.herokuapp.com",
+  "proxy": "https://lit-caverns-29354.herokuapp.com/https://webdevproject1.herokuapp.com",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

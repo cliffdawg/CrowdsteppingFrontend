@@ -145,7 +145,7 @@ class Steps extends Component {
   async createStep() {
 
     this.setState({ createDisabled: true }); 
-    setTimeout(() => this.setState({ createDisabled: false }), 4000);
+    setTimeout(() => this.setState({ createDisabled: false }), 5000);
 
     console.log(`createStep: ${this.state.step}`);
     let stepsIndex;

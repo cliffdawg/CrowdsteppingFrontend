@@ -171,7 +171,7 @@ class App2 extends Component {
   async postGoal() {
 
     this.setState({ createDisabled: true }); 
-    setTimeout(() => this.setState({ createDisabled: false }), 4000);
+    setTimeout(() => this.setState({ createDisabled: false }), 5000);
 
     const token = localStorage.getItem('token');
     const { goal } = this.state;
