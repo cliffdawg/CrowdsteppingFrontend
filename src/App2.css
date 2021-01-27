@@ -19,7 +19,7 @@
   top: 25%;
   bottom: 25%;
   margin: auto;
-  background: #60BDDB;
+  background: #30C4EB;
 }
 
 .Create-new-goal {
@@ -41,7 +41,7 @@
 }
 
 .App2-header {
-  background-color: #60BDDB;
+  background-color: #30C4EB;
   min-height: auto;
   display: flex;
   flex-direction: column;
@@ -75,7 +75,7 @@
 
 .Goals-grid {
   height: 100vh;
-  background-color: #60BDDB;
+  background-color: #30C4EB;
   display: grid;
   justify-content: space-around;
   align-items: center;

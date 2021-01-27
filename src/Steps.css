@@ -17,7 +17,7 @@
   top: 25%;
   bottom: 25%;
   margin: auto;
-  background: #60BDDB;
+  background: #24C962;
 }
 
 .Create-new-step {
@@ -59,7 +59,7 @@
 }
 
 .Columns {
-  background-color: #60BDDB;
+  background-color: #24C962;
   display: flex;
   flex-direction: row;
   
@@ -67,7 +67,7 @@
 
 .Steps-list {
   min-height: 100vh;
-  background-color: #60BDDB;
+  background-color: #24C962;
   display: flex;
   flex-direction: column;
   align-items: center;
