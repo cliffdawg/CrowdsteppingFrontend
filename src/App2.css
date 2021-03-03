@@ -140,7 +140,7 @@
 
 /* LABEL */
 .Custom-label          {
-  color:#999; 
+  color:#24C962; 
   font-family: 'Cabin';
   font-size:18px;
   font-weight:normal;
@@ -158,7 +158,7 @@
   top:-20px;
   font-family: 'Cabin';
   font-size:14px;
-  color:#5264AE;
+  color:#24C962;
 }
 
 /* BOTTOM BARS */
@@ -174,7 +174,7 @@
   width:0;
   bottom:1px; 
   position:absolute;
-  background:#5264AE; 
+  background:#24C962; 
   transition:0.2s ease all; 
   -moz-transition:0.2s ease all; 
   -webkit-transition:0.2s ease all;
