@@ -38,7 +38,7 @@
 }
 
 .Steps-header-overall {
-  background-color: #a2f2be;
+  background-color: #24C962;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,7 +48,7 @@
 }
 
 .Steps-header {
-  background-color: #a2f2be;
+  background-color: #24C962;
   min-height: 10vh;
   display: flex;
   flex-direction: row;
@@ -67,7 +67,8 @@
 
 .Steps-list {
   min-height: 100vh;
-  background-color: #24C962;
+  background-color: #A2F2BE;
+  text-shadow: 2px 2px #30C4EB;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -142,8 +143,8 @@
 }
 
 /* LABEL */
-.Custom-label          {
-  color:#24C962; 
+.Steps .Custom-label {
+  color:#9AA4AD; 
   font-family: 'Cabin';
   font-size:18px;
   font-weight:normal;
@@ -157,42 +158,42 @@
 }
 
 /* active state */
-.Custom-input:focus ~ .Custom-label, .Custom-input:valid ~ .Custom-label    {
+.Steps .Custom-input:focus ~ .Custom-label, .Custom-input:valid ~ .Custom-label    {
   top:-20px;
   font-family: 'Cabin';
   font-size:14px;
-  color:#24C962;
+  color:#273055;
 }
 
 /* BOTTOM BARS */
-.Custom-bar  { 
+.Steps .Custom-bar  { 
   position:relative; 
   display:block; 
   width:200px; 
 }
 
-.Custom-bar:before, .Custom-bar:after   {
+.Steps .Custom-bar:before, .Steps .Custom-bar:after   {
   content:'';
   height:2px; 
   width:0;
   bottom:1px; 
   position:absolute;
-  background:#24C962; 
+  background:#273055; 
   transition:0.2s ease all; 
   -moz-transition:0.2s ease all; 
   -webkit-transition:0.2s ease all;
 }
 
-.Custom-bar:before {
+.Steps .Custom-bar:before {
   left:50%;
 }
 
-.Custom-bar:after {
+.Steps .Custom-bar:after {
   right:50%; 
 }
 
 /* active state */
-.Custom-input:focus ~ .Custom-bar:before, .Custom-input:focus ~ .Custom-bar:after {
+.Steps .Custom-input:focus ~ .Custom-bar:before, .Custom-input:focus ~ .Custom-bar:after {
   width:50%;
 }
 

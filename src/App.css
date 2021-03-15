@@ -84,8 +84,8 @@
 }
 
 /* LABEL */
-.Custom-label          {
-  color:#24C962; 
+.App .Custom-label {
+  color:#9AA4AD; 
   font-family: 'Cabin';
   font-size:18px;
   font-weight:normal;
@@ -99,7 +99,7 @@
 }
 
 /* active state */
-.Custom-input:focus ~ .Custom-label, .Custom-input:valid ~ .Custom-label    {
+.App .Custom-input:focus ~ .Custom-label, .Custom-input:valid ~ .Custom-label    {
   top:-20px;
   font-family: 'Cabin';
   font-size:14px;
@@ -107,13 +107,13 @@
 }
 
 /* BOTTOM BARS */
-.Custom-bar  { 
+.App .Custom-bar  { 
   position:relative; 
   display:block; 
   width:200px; 
 }
 
-.Custom-bar:before, .Custom-bar:after   {
+.App .Custom-bar:before, .App .Custom-bar:after   {
   content:'';
   height:2px; 
   width:0;
@@ -125,16 +125,16 @@
   -webkit-transition:0.2s ease all;
 }
 
-.Custom-bar:before {
+.App .Custom-bar:before {
   left:50%;
 }
 
-.Custom-bar:after {
+.App .Custom-bar:after {
   right:50%; 
 }
 
 /* active state */
-.Custom-input:focus ~ .Custom-bar:before, .Custom-input:focus ~ .Custom-bar:after {
+.App .Custom-input:focus ~ .Custom-bar:before, .Custom-input:focus ~ .Custom-bar:after {
   width:50%;
 }
 

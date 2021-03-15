@@ -428,8 +428,12 @@ class Steps extends Component {
             </button>
           </Ripples>
         </header>
-        <p style={{ marginTop: '20px', fontSize: '20px', fontFamily: 'Cabin', textAlign: 'center', color: '#FFFFFF', backgroundColor: '#a2f2be' }}>{'Goal:  ' + this.props.location.state.goal}</p>
-        <p style={{ marginTop: '0px', fontSize: '20px', fontFamily: 'Cabin', textAlign: 'center', color: '#FFFFFF', backgroundColor: '#a2f2be' }}>{'User:  ' + this.props.username}</p>
+        <p style={{ marginTop: '20px', fontSize: '20px', fontFamily: 'Cabin', textAlign: 'center', color: '#FFFFFF', backgroundColor: '#24C962', textShadow: '2px 1px #30C4EB' }}>
+          {'Goal:  ' + this.props.location.state.goal}
+        </p>
+        <p style={{ marginTop: '0px', fontSize: '20px', fontFamily: 'Cabin', textAlign: 'center', color: '#FFFFFF', backgroundColor: '#24C962', textShadow: '2px 1px #30C4EB' }}>
+          {'User:  ' + this.props.username}
+        </p>
         </header>
         {this.state.showInsert ? <img src={require('./assets/insertIcon.png')} alt='Ins' onClick={() => this.prepareInsert(-1)} style={{ position : 'absolute', marginLeft : '30vw', marginTop : '-20px' }} width='100' height='100' /> : null}
         <div className="Steps-list">
