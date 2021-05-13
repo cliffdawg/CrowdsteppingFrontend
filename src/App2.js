@@ -222,7 +222,7 @@ class App2 extends Component {
             />
           ));
       } else {
-          cards = (<h1 style={{ fontSize: '3vw' }}>
+          cards = (<h1 style={{ width: '100vw', fontSize: '5vw', backgroundColor: '#30C4EB', textShadow: '2px 2px #24C962'}}>
               It is currently very empty.
           </h1>);
       }

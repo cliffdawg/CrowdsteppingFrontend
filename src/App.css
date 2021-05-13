@@ -53,7 +53,7 @@
   transition: all 0.4s ease 0s;
 }
 
-.Button-style:hover {
+.App .Button-style:hover {
   color: #FFFFFF;
   background: #30C4EB;
   border-color: #FFFFFF;
