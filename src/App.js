@@ -12,6 +12,20 @@ import './App.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Ripples from 'react-ripples'
+import { useState } from "react";
+import { css } from "@emotion/core";
+import DotLoader from "react-spinners/DotLoader";
+
+// For React Spinners
+
+const override = css`
+  position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -125px;
+    margin-left: -125px;
+    z-index: 1;
+`;
 
 // Redux store and web tokens are kept in browser memory
 
@@ -29,7 +43,8 @@ class App extends Component {
             email: '',
             password2: '',
             loginDisabled: false,
-            signupDisabled: false
+            signupDisabled: false,
+            loading: false
         };
 
         // Arrow functions declared in constructor are the only ones that can be accessed by rendered components
@@ -131,8 +146,17 @@ class App extends Component {
             username: username,
             password: password
         };
+
+    this.setState({
+        loading: true
+    });
+
     const loginResult = await api.signIn(newLogin);
     
+    this.setState({
+        loading: false
+    });
+
     if (loginResult.success === true) {
       console.log(`loginResult: ${loginResult.data}`);
       localStorage.setItem('token', loginResult.data[0]);
@@ -183,6 +207,7 @@ class App extends Component {
 
     return (
       <div className="App">
+        <DotLoader color={'#2CECC6'} loading={this.state.loading} css={override} size={250} />
         <ToastContainer />
         <header className="App-header">
           <img src={require('./assets/crowd.png')} alt='Crowdstepping logo' 
