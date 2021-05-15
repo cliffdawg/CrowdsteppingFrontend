@@ -182,7 +182,16 @@ class App extends Component {
             email: email,
             password: password2
         };
+
+    this.setState({
+        loading: true
+    });
+
     const signupResult = await api.signUp(newSignup);
+    
+    this.setState({
+        loading: false
+    });
     
     if (signupResult.success === true) {
       console.log(`signupResult token and id: ${signupResult.token}, ${signupResult.userID}`);

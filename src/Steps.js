@@ -14,7 +14,20 @@ import UserPanel from './UserPanel';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Ripples from 'react-ripples'
+import { useState } from "react";
+import { css } from "@emotion/core";
+import DotLoader from "react-spinners/DotLoader";
 
+// For React Spinners
+
+const override = css`
+  position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -125px;
+    margin-left: -125px;
+    z-index: 1;
+`;
 
 class Popup extends Component {
   render() {
@@ -66,8 +79,10 @@ class Steps extends Component {
             steps: [],
             votes: [],
             index: 0,
+            showApproved: 'Show Unapproved',
             popUp: false,
-            createDisabled: false
+            createDisabled: false,
+            loading: false
         };
         // Arrow functions declared in constructor are the only ones that can be accessed by rendered components
         // and provide access to the current state
@@ -178,7 +193,17 @@ class Steps extends Component {
       stepsIndex: stepsIndex
     }; 
     console.log(`prospectiveStep: ${prospectiveStep.goal}, ${prospectiveStep.step}, ${prospectiveStep.username}, ${prospectiveStep.stepsIndex}`);
+    
+    this.setState({
+        loading: true
+    });
+
     const createResult = await api.createStep(prospectiveStep, token);
+    
+    this.setState({
+        loading: false
+    });
+
     if (createResult.success === true) {
       console.log(`Success: ${createResult.message}, stepsIndex: ${stepsIndex}`);
       this.setSteps(prospectiveStep.goal);
@@ -316,6 +341,16 @@ class Steps extends Component {
         this.setState({
               showProposed: !this.state.showProposed
         });
+
+        if (this.state.showProposed === true) {
+            this.setState({
+              showApproved: 'Hide Unapproved'
+            });
+        } else {
+            this.setState({
+              showApproved: 'Show Unapproved'
+            });
+        }
   }
 
   async showInsert() {
@@ -402,6 +437,7 @@ class Steps extends Component {
 
     return (
       <div className="Steps">
+        <DotLoader color={'#2CECC6'} loading={this.state.loading} css={override} size={250} />
         <ToastContainer />
         <header className="Steps-header-overall">
         <header className="Steps-header">  
@@ -419,7 +455,7 @@ class Steps extends Component {
         <header className="Steps-header">
           <Ripples>
             <button className="Button-style" onClick={this.showProposed} style={{ height : '60px', width : '150px' }}>
-              Show Unapproved
+             {this.state.showApproved}
             </button>
           </Ripples>
           <Ripples>

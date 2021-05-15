@@ -14,7 +14,20 @@ import UserPanel from './UserPanel';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Ripples from 'react-ripples'
+import { useState } from "react";
+import { css } from "@emotion/core";
+import DotLoader from "react-spinners/DotLoader";
 
+// For React Spinners
+
+const override = css`
+  position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -125px;
+    margin-left: -125px;
+    z-index: 1;
+`;
 
 class Popup extends Component {
   render() {
@@ -64,7 +77,8 @@ class App2 extends Component {
             goal: '',
             goals: [],
             popUp: false,
-            createDisabled: false
+            createDisabled: false,
+            loading: false
         };
         // Arrow functions declared in constructor are the only ones that can be accessed by rendered components
         // and provide access to the current state
@@ -180,7 +194,17 @@ class App2 extends Component {
             goal: goal,
             username: this.props.username
         };
+
+    this.setState({
+        loading: true
+    });
+
     const createResult = await api.createGoal(newGoal, token);
+    
+    this.setState({
+        loading: false
+    });
+
     // This checking is needed for 503 service unavailable
     // typeof(createResult) !== 'undefined'
     if (createResult.success === true) {
@@ -232,6 +256,7 @@ class App2 extends Component {
     return (
 
       <div className="App2">
+        <DotLoader color={'#2CECC6'} loading={this.state.loading} css={override} size={250} />
         <ToastContainer />
         <header className="App2-header">
           <div className="Top-bar">

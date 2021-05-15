@@ -4,7 +4,7 @@
   height: 100px;
   border-radius: 25px;
   background: rgb(5,93,177);
-  background: radial-gradient(circle, rgba(5,93,177,1) 30%, rgba(0,212,255,1) 90%, rgba(255,255,255,1) 100%);
+  background: radial-gradient(circle, rgba(5,93,177,1) 85%, rgba(0,212,255,1) 95%, rgba(255,255,255,1) 98%);
   background-color: blue;
   display: flex;
   flex-direction: column;
