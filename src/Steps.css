@@ -68,7 +68,7 @@
 .Steps-list {
   min-height: 100vh;
   background-color: #A2F2BE;
-  text-shadow: 2px 2px #30C4EB;
+  text-shadow: 1px 1px #30C4EB;
   display: flex;
   flex-direction: column;
   align-items: center;

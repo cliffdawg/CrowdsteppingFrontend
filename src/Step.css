@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
 .step {
   height: 120px;
-  width: 400px;
+  width: 600px;
   border-radius: 25px;
   background: rgb(5,93,177);
   background: radial-gradient(circle, rgba(5,93,177,1) 30%, rgba(0,212,255,1) 90%, rgba(255,255,255,1) 100%);
@@ -26,12 +28,12 @@
 
 .step-identifiers {
   position: relative;
-  width: 150%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   color: white;
-  font-size: 10%;
+  font-size: 12px;
 }
 
 .step-buttons {
@@ -57,7 +59,7 @@
 
 .Button-style:hover {
   color: #FFFFFF;
-  background: #30C4EB;
+  background: #273055;
   border-color: #FFFFFF;
   transition: all 0.4s ease 0s;
 }

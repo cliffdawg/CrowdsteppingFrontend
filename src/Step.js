@@ -32,14 +32,14 @@ const Step = ({index, step, userID, timeStamp, status, userEndorsed, endorse, op
 		</div>
 		<div className="step-buttons">
 			<Ripples>
-				<button className="Button-style" onClick={() => { endorse(step, userEndorsed); setDisabled(true); setTimeout(() => setDisabled(false), 4000); }} 
-					disabled={disabled} style={{ border : 0, borderRadius : '10px', backgroundColor: (userEndorsed === 1) ? '#FF1493' : '#FFFFFF', height : '30px', width : '100px' }}>
+				<button onClick={() => { endorse(step, userEndorsed); setDisabled(true); setTimeout(() => setDisabled(false), 4000); }} 
+					disabled={disabled} style={{ color : (userEndorsed === 1) ? '#FFFFFF' : '#8E62BD', fontSize : 15, fontFamily : 'Josefin Sans', border : 0, borderRadius : '10px', backgroundColor: (userEndorsed === 1) ? '#FF1493' : '#FFFFFF', height : '30px', width : '100px' }}>
            			Endorse
          		</button>
          	</Ripples>
          	<Ripples>
-          		<button className="Button-style" onClick={() => { oppose(step, userEndorsed); setDisabled(true); setTimeout(() => setDisabled(false), 4000); }} 
-          			disabled={disabled} style={{ border : 0, borderRadius : '10px', backgroundColor: (userEndorsed === 0) ? '#FF1493' : '#FFFFFF', height : '30px', width : '100px' }}>
+          		<button onClick={() => { oppose(step, userEndorsed); setDisabled(true); setTimeout(() => setDisabled(false), 4000); }} 
+          			disabled={disabled} style={{ color : (userEndorsed === 0) ? '#FFFFFF' : '#8E62BD', fontSize : 15, fontFamily : 'Josefin Sans', border : 0, borderRadius : '10px', backgroundColor: (userEndorsed === 0) ? '#FF1493' : '#FFFFFF', height : '30px', width : '100px' }}>
             		Oppose 
           		</button>
           	</Ripples>
